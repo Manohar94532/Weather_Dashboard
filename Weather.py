@@ -268,6 +268,9 @@ def main():
                 <h3>Warning Level: {condition_style['warning_level']}</h3>
             </div>
             """, unsafe_allow_html=True)
+            st.write("")
+            st.write("")
+            
             
             # Current Weather Card
             st.markdown(f"""
@@ -291,6 +294,9 @@ def main():
                 </div>
             </div>
             """, unsafe_allow_html=True)
+            st.write("")
+            st.write("")
+            
             
             # Air Quality Section
             if weather_data.get('air_quality'):
@@ -315,6 +321,7 @@ def main():
             pollen_count = weather_data['pollen_count']
             pollen_risk, pollen_text = get_pollen_risk_level(pollen_count)
             
+            
             st.markdown(f"""
             <div class="metric-card">
                 <h3>🌼 Pollen Forecast</h3>
@@ -323,6 +330,9 @@ def main():
                 {"<p style='color:red;'>Recommendation: Consider staying indoors if you have allergies.</p>" if pollen_risk in ['High', 'Very High'] else ""}
             </div>
             """, unsafe_allow_html=True)
+            st.write("")
+            st.write("")
+            
             
             # Add Map Feature
             lat = current['coord']['lat']
